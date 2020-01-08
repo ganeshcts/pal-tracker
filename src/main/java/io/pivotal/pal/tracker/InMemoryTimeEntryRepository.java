@@ -1,7 +1,5 @@
 package io.pivotal.pal.tracker;
 
-import org.springframework.stereotype.Repository;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,6 +9,7 @@ import java.util.Map;
 public class InMemoryTimeEntryRepository implements TimeEntryRepository {
 
     Map<Long, TimeEntry> inMemRepo = new HashMap<Long, TimeEntry>();
+    private long count = 1;
 
     @Override
     public TimeEntry find(long timeEntryId) {
@@ -22,7 +21,8 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository {
     @Override
     public TimeEntry create(TimeEntry timeEntry) {
 
-        inMemRepo.put(timeEntry.getId(), timeEntry);
+        inMemRepo.put(count, timeEntry);
+        count = count++;
         return timeEntry;
     }
 
