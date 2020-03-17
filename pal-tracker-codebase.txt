@@ -1,2 +1,0 @@
-pal-tracker codebase
-test
