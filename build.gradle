@@ -1,3 +1,7 @@
+//apiUrl = "https://cognizant-waveland.education.pivotal.io"
+
+//cohortIdentifier = "pal-training-program-2020--java-batch-2"
+
 plugins {
     id 'org.springframework.boot' version '2.2.2.RELEASE'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
@@ -11,6 +15,10 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compile("org.springframework.boot:spring-boot-starter-web")
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
 }
 
 jar {
@@ -20,3 +28,11 @@ jar {
     destinationDir = file('/home/gguru/workspace/pal-tracker/build/lib/pal-tracker')
     archivesBaseName = "pal-tracker"
 }
+
+bootRun.environment([
+        "WELCOME_MESSAGE": "hello",
+])
+
+test.environment([
+        "WELCOME_MESSAGE": "Hello from test",
+])

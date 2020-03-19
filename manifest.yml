@@ -1,0 +1,8 @@
+applications:
+  - name: 181651-pal-tracker
+    path: build/libs/pal-tracker.jar
+    routes:
+      - route: 181651-pal-tracker.cfapps.io
+    env:
+      WELCOME_MESSAGE: Hello from Cloud Foundry
+      JBP_CONFItG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
