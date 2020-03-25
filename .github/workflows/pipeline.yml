@@ -64,7 +64,7 @@ jobs:
         cf login -a "$CF_API_URL" -o "$CF_ORG" -s "$CF_SPACE" -u "$CF_USERNAME" -p "$CF_PASSWORD"
         scripts/migrate-databases.sh 181651-pal-tracker .
       env:
-        CF_API_URL: ${{ secrets.CF_API_URL }}s
+        CF_API_URL: ${{ secrets.CF_API_URL }}
         CF_ORG: ${{ secrets.CF_ORG }}
         CF_SPACE: ${{ secrets.CF_SPACE }}
         CF_USERNAME: ${{ secrets.CF_USERNAME }}
