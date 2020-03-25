@@ -4,5 +4,6 @@ applications:
     routes:
       - route: 181651-pal-tracker.cfapps.io
     env:
+      JBP_CONFIG_DEBUG: '{enabled: true}'
       WELCOME_MESSAGE: Hello from the review environment
       JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
